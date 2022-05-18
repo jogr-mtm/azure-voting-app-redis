@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "aksdisttest-f0b6"
+    labels:
+        app: "aksdisttest-f0b6"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: azure-vote-test-aksdisttest-f0b6.7b1b5eb339e647b187e5.northeurope.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "aksdisttest-f0b6"
+                servicePort: 8089
